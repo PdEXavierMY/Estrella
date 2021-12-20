@@ -1,4 +1,3 @@
-import random
 import turtle
 
 puntas = int(input("Eliga el número de puntas de su estrella a dibujar: "))
@@ -20,3 +19,18 @@ def turtle_star(puntas, tamaño = 100):
                 continue
         turtle.goto(pclave[0][0], pclave[0][1])
         turtle.penup()
+        for k in range(0, (len(pclave) + 1)):
+            if k % 2 != 0:
+                turtle.goto(pclave[c][0], pclave[c][1])
+                turtle.pendown()
+            else:
+                continue
+        turtle.goto(pclave[1][0], pclave[1][1])
+    else:
+        angulo = 180 - (180 / puntas)
+        for a in range(puntas):
+            turtle.forward(tamaño)
+            turtle.right(angulo)
+    turtle.end_fill()
+
+turtle_star(puntas)
